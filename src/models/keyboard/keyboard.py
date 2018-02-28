@@ -1,0 +1,2 @@
+class Keyboard(object):
+    pass

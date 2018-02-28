@@ -1,0 +1,2 @@
+class Mouse(object):
+    pass
