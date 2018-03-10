@@ -1,3 +1,4 @@
 #! /usr/bin/env python
 from src import app
-app.run(debug=True,host="0.0.0.0",port=8080)
+from src.config import DEBUG, HOST, PORT
+app.run(debug=DEBUG, host=HOST, port=PORT)
