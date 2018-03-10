@@ -7,11 +7,8 @@
     <title>Computer Science Lab Content Management System</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename = 'css/materialize.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'css/app.js') }}"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     {% block css %} {% endblock %}
-    {% block js %} {% endblock %}
+
 
   </head>
   <body>
@@ -28,5 +25,12 @@
             {% include "footer.html" %}
         </div>
     </footer>
+
+    <!-- Always load your javascript last... Especially if you plan to use jQuery -->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/materialize.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/app.js') }}"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    {% block js %} {% endblock %}
   </body>
 </html>

@@ -13,9 +13,10 @@ class CPU(db.Model):
     mouse_id = db.Column(db.String(80), unique=True)
     product_key = db.Column(db.String(80), unique=True, nullable=True)  # some computers don't have a product key listed
     uwi_tag = db.Column(db.String(80), unique=True, nullable=True)  # some computers don't have a tag
+    status = db.Column(db.String(80))
 
     def __init__(self, model_no, name, service_tag, os_type, keyboard_id, monitor_id, mouse_id,
-                product_key, uwi_tag):
+                 product_key, uwi_tag):
         self.id = str(model_no) + str(service_tag)
         self.model_no = model_no
         self.name = name
@@ -25,5 +26,12 @@ class CPU(db.Model):
         self.monitor_id = monitor_id
         self.mouse_id = mouse_id
         self.product_key = product_key
-        # upc = Column(String(), unique=True, nullable=True)
         self.uwi_tag = uwi_tag
+        self.status = 'ONLINE'
+
+    def change_status(self):
+        if self.status == 'ONLINE':
+            self.status = 'OFFLINE'
+        else:
+            self.status = 'ONLINE'
+

@@ -1,6 +1,9 @@
 from src import app
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, current_user, login_required
+from src.auth.views import auth
+
+app.register_blueprint(auth, url_prefix = '/auth')
 
 @app.route('/')
 def home():
