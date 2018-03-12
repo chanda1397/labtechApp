@@ -10,7 +10,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = SECRET_KEY
 
 db = SQLAlchemy(app)
-
-# from src.auth.login import Login
+from common import DatabaseModel
+database = DatabaseModel()
 
 from src import views

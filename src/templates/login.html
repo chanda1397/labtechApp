@@ -4,16 +4,13 @@
 {% endblock %}
 {% block main %}
 <center>
-    <!--<img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
     <div class="section"></div>
 
-    <h5 class="indigo-text">LOGIN</h5>
     <div class="section">
     </div>
-
     <div class="container">
-        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-
+        <div class="z-depth-1 grey lighten-4 row form-login-cont" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+            <h5 class="indigo-text">LOGIN</h5>
             <form class="col s12" method="POST" action="{{url_for('auth.login')}}">
                 {{ form.csrf_token }}
                 {% if error %}
@@ -30,20 +27,13 @@
                 <div class='row'>
                     <div class='input-field col s12'>
                         {{ form.student_id(class="validate", placeholder="User ID") }}
-                        <!--<input class='validate' type='email' name='email' id='email' />-->
-                        <!--<label for='email'>Enter your email</label>-->
                     </div>
                 </div>
 
                 <div class='row'>
                     <div class='input-field col s12'>
                         {{ form.password(class="validate", placeholder="Password") }}
-                        <!--<input class='validate' type='password' name='password' id='password' />-->
-                        <!--<label for='password'>Enter your password</label>-->
                     </div>
-                    <label style='float: right;'>
-                        <a class='pink-text' href='#!'><b>Forgot Password?</b></a>
-                    </label>
                 </div>
 
                 <br />
@@ -55,7 +45,6 @@
             </form>
         </div>
     </div>
-    <a href="#!">Create account</a>
 </center>
 <div class="section"></div>
 <div class="section"></div>

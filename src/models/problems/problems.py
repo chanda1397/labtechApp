@@ -8,8 +8,8 @@ class Problems(db.Model):
     id = db.Column(db.String(80), primary_key=True)
     device_id = db.Column(db.String(80), unique=True)
     problem = db.Column(db.String(255), unique=True)
-    logged_by = db.Colum(db.String(80))
-    attendee = db.Colum(db.String(80))
+    logged_by = db.Column(db.String(80))
+    attendee = db.Column(db.String(80))
 
     def __init__(self, device_id, problem):
         self.device_id = device_id

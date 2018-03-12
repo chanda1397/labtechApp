@@ -1,4 +1,4 @@
-from src.config import DEBUG
+from flask_login import login_user, logout_user, current_user
 
 
 class Login:

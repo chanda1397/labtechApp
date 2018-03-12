@@ -13,10 +13,13 @@ class LabTech(db.Model, UserMixin):
     password = db.Column(db.String(80))
     status = db.Column(db.String(80))  # active, terminated
     profile_photo = db.Column(db.String(80))
+    account_type = db.Column(db.String(80))  # admin, assistant
+    salt = db.Column(db.Integer)
 
     def __init__(self, _id, first_name, last_name, email, password, status, account_type,
                  profile_photo="default.jpg"):
-        self.salt = randint()
+        # type: (int, str, str, str, str, str, str, str) -> None
+        self.salt = randint(2543, 812791)
         self.id = _id
         self.first_name = first_name
         self.last_name = last_name
@@ -28,3 +31,7 @@ class LabTech(db.Model, UserMixin):
 
     def validate_password(self, password):
         return check_password_hash(self.password, password + str(self.salt))
+
+    def change_password(self, password):
+        self.salt = randint(2543, 812791)
+        self.password = generate_password_hash(password + str(self.salt), method="sha256")

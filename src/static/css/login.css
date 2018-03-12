@@ -13,6 +13,10 @@ main {
   color: #d50000;
 }
 
+.form-login-cont {
+  min-width: 400px;
+}
+
 .input-field input[type=date]:focus + label,
 .input-field input[type=text]:focus + label,
 .input-field input[type=email]:focus + label,
