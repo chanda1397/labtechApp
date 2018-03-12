@@ -1,7 +1,8 @@
 from src import app
-from flask import render_template, request, redirect, url_for, flash
-from flask_login import login_user, logout_user, current_user, login_required
-from src.auth.views import auth
+from flask import render_template
+from flask_login import login_required
+from src.auth import auth
+
 
 app.register_blueprint(auth, url_prefix='/auth')
 
@@ -13,18 +14,21 @@ def home():
 
 
 @app.route('/cisco')
+@login_required
 def cisco():
     """Render website's cisco page."""
     return render_template('cisco.html')
 
 
 @app.route('/faculty')
+@login_required
 def faculty():
     """Render website's faculty page."""
     return render_template('faculty.html')
 
 
 @app.route('/engineering')
+@login_required
 def engineering():
     """Render website's engineering page."""
     return render_template('engineering.html')

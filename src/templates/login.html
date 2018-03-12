@@ -9,13 +9,13 @@
     <div class="section">
     </div>
     <div class="container">
-        <div class="z-depth-1 grey lighten-4 row form-login-cont" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+        <div class="z-depth-1 grey lighten-4 row form-login-cont">
             <h5 class="indigo-text">LOGIN</h5>
             <form class="col s12" method="POST" action="{{url_for('auth.login')}}">
                 {{ form.csrf_token }}
                 {% if error %}
-                    <div class="card-panel z-depth-0 red accent-1 error">
-                        {{ error }}
+                    <div class="red accent-1 error">
+                        {{ error }} Is something good to look forward to
                     </div>
                 {% endif %}
 
@@ -26,13 +26,13 @@
 
                 <div class='row'>
                     <div class='input-field col s12'>
-                        {{ form.student_id(class="validate", placeholder="User ID") }}
+                        {{ form.student_id(class="validate", placeholder="User ID", autocomplete="off", value="620000000") }}
                     </div>
                 </div>
 
                 <div class='row'>
                     <div class='input-field col s12'>
-                        {{ form.password(class="validate", placeholder="Password") }}
+                        {{ form.password(class="validate", placeholder="Password", autocomplete="off") }}
                     </div>
                 </div>
 
