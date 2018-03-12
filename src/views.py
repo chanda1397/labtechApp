@@ -1,10 +1,16 @@
-from src import app
 from flask import render_template
-from flask_login import login_required
+from src import app, login_manager
 from src.auth import auth
+from flask_login import login_required
+from src.models.lab_tech import LabTech
 
 
 app.register_blueprint(auth, url_prefix='/auth')
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return LabTech.query.get(int(user_id))
 
 
 @app.route('/')
