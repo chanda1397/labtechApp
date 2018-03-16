@@ -3,10 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from config import *
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "password"
-
-
-db = SQLAlchemy(app)
+app.config['SECRET_KEY'] = SECRET_KEY
 
 
 app.config.from_object(__name__)
