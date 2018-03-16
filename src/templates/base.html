@@ -9,12 +9,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
-<<<<<<< HEAD
-    <script type="text/javascript" src="{{ url_for('static', filename = 'css/materialize.min.js') }}"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'css/app.js') }}"></script>
-=======
->>>>>>> 03ce13ecfcf5bbccc76bd5beee48813fe04584d1
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/materialize.min.js') }}"></script>
+    <script defer src="{{ url_for('static', filename = 'js/all.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/app.js') }}"></script>
     {% block css %} {% endblock %}
 
 
@@ -33,12 +31,6 @@
             {% include "footer.html" %}
         </div>
     </footer>
-
-    <!-- Always load your javascript last... Especially if you plan to use jQuery -->
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/materialize.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/app.js') }}"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     {% block js %} {% endblock %}
   </body>
 </html>
