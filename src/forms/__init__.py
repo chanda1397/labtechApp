@@ -1,2 +1,3 @@
 from login_form import LoginForm
 from register_form import RegisterForm
+from cisco_keyboard_form import CiscoKeyboard

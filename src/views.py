@@ -1,9 +1,9 @@
-from flask import render_template
+from flask import render_template, request
 from src import app, login_manager
 from src.auth import auth
 from flask_login import login_required
 from src.models.lab_tech import LabTech
-
+from src.forms import CiscoKeyboard
 
 app.register_blueprint(auth, url_prefix='/auth')
 
@@ -14,7 +14,6 @@ def load_user(user_id):
 
 
 @app.route('/')
-
 def home():
     """Render website's home page."""
     return render_template('home.html')
@@ -26,11 +25,12 @@ def cisco():
     """Render website's cisco page."""
     return render_template('cisco.html')
 
+
 @app.route('/profile', methods=['GET', 'POST'])
 @app.route('/cisco/keyboard')
-def ciscoKeyboard():
+def cisco_keyboard():
     """Render website's cisco page."""
-    form = MyForm()
+    form = CiscoKeyboard()
     if request.method == 'POST' and form.validate_on_submit():
         
         name = form.name.data
@@ -38,6 +38,7 @@ def ciscoKeyboard():
         functional = form.functional.data
         
     return render_template('ciscoKeyboard.html',  form = form)
+
 
 @app.route('/faculty')
 @login_required
@@ -52,12 +53,14 @@ def engineering():
     """Render website's engineering page."""
     return render_template('engineering.html')
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     return render_template("login.html")
 
+
 @app.errorhandler(404)
 def page_not_found(error):
     """Custom 404 page."""
-    print error
+    print(error)
     return "lol", 404
