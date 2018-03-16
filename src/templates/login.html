@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,3 +33,56 @@
     </div>
 </body>
 </html>
+=======
+{% extends "base.html"%}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+{% block main %}
+<center>
+    <div class="section"></div>
+
+    <div class="section">
+    </div>
+    <div class="container">
+        <div class="z-depth-1 grey lighten-4 row form-login-cont">
+            <h5 class="indigo-text">LOGIN</h5>
+            <form class="col s12" method="POST" action="{{url_for('auth.login')}}">
+                {{ form.csrf_token }}
+                {% if error %}
+                    <div class="red accent-1 error">
+                        {{ error }} Is something good to look forward to
+                    </div>
+                {% endif %}
+
+                <div class='row'>
+                    <div class='col s12'>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        {{ form.student_id(class="validate", placeholder="User ID", autocomplete="off", value="620000000") }}
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        {{ form.password(class="validate", placeholder="Password", autocomplete="off") }}
+                    </div>
+                </div>
+
+                <br />
+                <center>
+                    <div class='row'>
+                        <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
+                    </div>
+                </center>
+            </form>
+        </div>
+    </div>
+</center>
+<div class="section"></div>
+<div class="section"></div>
+{% endblock %}
+>>>>>>> 03ce13ecfcf5bbccc76bd5beee48813fe04584d1
