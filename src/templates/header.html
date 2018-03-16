@@ -1,18 +1,18 @@
-<nav>
-    <div class="nav-wrapper teal lighten-2">
-    <a href="{{ url_for('home') }}" class="brand-logo" style="margin-left: 30px;">LMS</a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
+<nav style="height:0px">
+    <div class="navbar-fixed teal lighten-2">
+    <a href="{{ url_for('home') }}" class="brand-logo" style="margin-left: 50px;">LMS</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="nav-link" href="{{ url_for('cisco') }}">CISCO</a></li>
-        <li><a  class="nav-link" href="{{ url_for('faculty') }}">FACULTY</a></li>
-        <li><a  class="nav-link" href="{{ url_for('engineering') }}">ENGINEERING</a></li>
-        <li><i class="fas fa-user" style="font-size: 25px; margin-right: 30px; margin-left: 10px" ></i></li>
+        <li><a class="nav-link" href="{{ url_for('cisco') }}">Cisco</a></li>
+        <li><a  class="nav-link" href="{{ url_for('faculty') }}">Faculty</a></li>
+        <li><a  class="nav-link" href="{{ url_for('engineering') }}">Engineering</a></li>
+        <li><i class="fas fa-user" style="font-size: 20px; margin-right: 100px; margin-left: 15px" ></i></li>
 
       </ul>
       <ul class="side-nav" id="mobile-demo">
-          <li><a class="nav-link" href="{{ url_for('cisco') }}">CISCO</a></li>
-          <li><a class="nav-link" href="{{ url_for('faculty') }}">FACULTY</a></li>
-          <li><a class="nav-link" href="{{ url_for('engineering') }}">ENGINEERING</a></li>
+          <li><a class="nav-link" href="{{ url_for('cisco') }}">Cisco</a></li>
+          <li><a class="nav-link" href="{{ url_for('faculty') }}">Faculty</a></li>
+          <li><a class="nav-link" href="{{ url_for('engineering') }}">Engineering</a></li>
           <li><i class="fas fa-user" style="font-size: 25px" ></i></li>
         </ul>
     </div>

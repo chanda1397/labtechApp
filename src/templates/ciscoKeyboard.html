@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block main %}
+<!-- NavBar-->
+<ul id="slide-out" class="side-nav fixed" style="z-index: 1; padding-top: 20px; width:250px; background-color: #eeeeee;">
+  <li style=" margin-top: 70px"><a href="{{ url_for('ciscoKeyboard') }}">Keyboard</a></li>
+  <li><a href="#!">Monitor</a></li>
+  <li><a href="#!">Mouse</a></li>
+  <li><a href="#!">CPU</a></li>
+</ul>
+<!-- Header -->
+<h5 style=" margin-top: 100px; margin-left: 12%"> Cisco </h5>
+<!-- SearchBar -->
+<nav style="margin-left: 12%; margin-top: 10%; width: 30%; background-color: white">
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+        </div>
+      </form>
+    </div>
+  </nav>
+<!-- Table Header -->
+  <div class="col s12 m7" style="margin-left: 12%; margin-top: 10%; width: 87%">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">        
+          </div>
+        </div>
+      </div>
+  </div>
+<!-- Table -->
+  <table class="bordered" style=" width: 87%; margin-left: 12%" >
+  <tbody>
+      <tr>
+        <td>Dell Keyboard</td>
+        <td>55555</td>
+        <td>Yes</td>
+        <td>9999</td>
+        <td><i class="fas fa-trash"></i></td>
+        <td><i class="fas fa-pencil-alt"></i></td>
+      </tr>
+      <tr>
+        <td>Dell Keyboard</td>
+        <td>55555</td>
+        <td>No</td>
+        <td>9999</td>
+        <td><i class="fas fa-trash"></i></td>
+        <td><i class="fas fa-pencil-alt"></i></td>
+      </tr>
+      <tr>
+        <td>Dell Keyboard</td>
+        <td>55555</td>
+        <td>Yes</td>
+        <td>9999</td>
+        <td><i class="fas fa-trash"></i></td>
+        <td><i class="fas fa-pencil-alt"></i></td>
+      </tr>
+    </tbody>
+  </table>       
+{% endblock %}
