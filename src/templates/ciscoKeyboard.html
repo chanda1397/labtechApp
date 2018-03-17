@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block main %}
-<!-- NavBar-->
+<!-- SideBar-->
 <ul id="slide-out" class="side-nav fixed" style="z-index: 1; padding-top: 20px; width:250px; background-color: #eeeeee;">
-  <li style=" margin-top: 70px"><a href="{{ url_for('ciscoKeyboard') }}">Keyboard</a></li>
+  <li style=" margin-top: 70px"><a href="{{ url_for('cisco_keyboard') }}">Keyboard</a></li>
   <li><a href="#!">Monitor</a></li>
   <li><a href="#!">Mouse</a></li>
   <li><a href="#!">CPU</a></li>
@@ -23,12 +23,16 @@
 <!-- Table Header -->
   <div class="col s12 m7" style="margin-left: 12%; margin-top: 10%; width: 87%">
       <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">        
+          <div class="card-content">
+          <h6 style="display:inline">Name</h6>
+          <h6 style="display: inline; margin-left: 215px">Serial Number</h6>
+          <h6 style="display: inline; margin-left: 50px">Functional</h6>
+          <h6 style="display: inline; margin-left: 58px">Blah</h6>
+          <h6 style="display: inline; margin-left: 80px">Delete</h6>
+          <h6 style="display: inline; margin-left: 40px">Edit</h6>
           </div>
         </div>
       </div>
-  </div>
 <!-- Table -->
   <table class="bordered" style=" width: 87%; margin-left: 12%" >
   <tbody>

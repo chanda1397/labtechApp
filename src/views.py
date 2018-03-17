@@ -1,5 +1,5 @@
 from flask import render_template, request
-from src import app, login_manager
+from src import app, login_manager, db
 from src.auth import auth
 from flask_login import login_required
 from src.models.lab_tech import LabTech
@@ -15,6 +15,10 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
+    # db.session.add(LabTech(620000000, "Admin", "User", "admin@lab.com", "Password123", "ACTIVE", 'ADMIN', profile_photo="default.jpg"))
+    # db.session.commit()
+    #type: (int, str, str, str, str, str, str, str) -> None
+    #(620000000, "Admin", "User", "admin@lab.com", "Password123", "ACTIVE", 'ADMIN', profile_photo="default.jpg")
     """Render website's home page."""
     return render_template('home.html')
 
